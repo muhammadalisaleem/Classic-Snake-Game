@@ -4,7 +4,7 @@
 ## 📜 Description
 This project is a classic **Snake Game** implemented entirely in **8086 Assembly language** targeting the DOS environment. The game runs in text mode (80x25) and uses BIOS interrupts and direct video memory access for input handling and display output. 
 
-Control the snake with arrow keys to eat food, grow longer, and avoid running into yourself. The game ends when the snake collides with its own body.
+Control the snake with arrow keys to eat food, grow longer, and avoid running into yourself. The game ends when the snake collides with its own body or the boundary.
 
 ---
 
