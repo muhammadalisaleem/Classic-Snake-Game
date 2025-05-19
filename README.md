@@ -1,95 +1,91 @@
-🐍 Snake Game in 8086 Assembly
-👨‍💻 Authors
-Ali Saleem (23L-2638)
 
-Ammar Hassan (23L-2614)
+# 🐍 Snake Game in 8086 Assembly
 
-📜 Description
-This is a classic Snake Game implemented in 8086 Assembly language for the DOS environment. The game is entirely text-based and runs in the 80x25 video text mode using BIOS interrupts and direct video memory access. It simulates the traditional snake game where the player controls the snake using arrow keys, collects food, and avoids self-collision.
+## 📜 Description
+This project is a classic **Snake Game** implemented entirely in **8086 Assembly language** targeting the DOS environment. The game runs in text mode (80x25) and uses BIOS interrupts and direct video memory access for input handling and display output. 
 
-🎮 Features
-Real-time keyboard input for controlling the snake using arrow keys
+Control the snake with arrow keys to eat food, grow longer, and avoid running into yourself. The game ends when the snake collides with its own body.
 
-Food spawning and score tracking
+---
 
-Snake body growth on food consumption
+## 🎮 Features
+- Responsive real-time control using arrow keys
+- Food spawning at random locations
+- Score tracking and display
+- Snake growth on food consumption
+- Self-collision detection causing game over
+- Centered title screen and gameplay UI
+- Buffer-based rendering for smooth visuals
 
-Game Over detection on collision
+---
 
-Centered title screen and score display
+## 🛠 Requirements
+- DOS environment or DOS emulator such as [DOSBox](https://www.dosbox.com/)
+- NASM assembler to build the `.COM` executable
+- Basic familiarity with running DOS programs
 
-Buffer-based rendering for smoother visuals
+---
 
-🛠 Requirements
-DOS environment or emulator (e.g., DOSBox)
+## ▶️ How to Run (Using NASM)
+1. **Assemble the source code into a `.COM` executable:**
+   ```bash
+   nasm snakegame.asm -f bin -o snakegame.com
+````
 
-NASM Assembler
+2. **Run the game inside DOSBox or any DOS environment:**
 
-8086-compatible code (COM file format)
+   ```bash
+   snakegame.com
+   ```
 
-▶️ How to Run (Using NASM)
-Assemble the code using NASM:
+> ⚠️ Make sure your `snakegame.asm` file uses `ORG 100h` to produce a proper COM format executable.
 
-bash
-Copy
-Edit
-nasm snakegame.asm -f bin -o snakegame.com
-Run the game in DOSBox:
+---
 
-bash
-Copy
-Edit
-snakegame.com
-💡 Make sure your code is written for .COM format (ORG 100h) for this to work correctly.
+## 🎮 Controls
 
-🎮 Controls
-Arrow Keys: Move the snake in the respective direction
+* **Arrow Keys:** Move the snake up, down, left, or right
+* **ESC:** Exit the game
 
-ESC: Quit the game
+---
 
-📁 File Structure
-File	Description
-snakegame.asm	Complete source code for the snake game
-README.md	This documentation file
+## 📁 File Structure
 
-🧠 Concepts Used
-BIOS & DOS interrupts (INT 10h, INT 16h, INT 1Ah, INT 21h)
+| Filename        | Description                    |
+| --------------- | ------------------------------ |
+| `snakegame.asm` | Source code for the Snake game |
+| `README.md`     | This documentation file        |
 
-Direct video memory access (0xB800)
+---
 
-String manipulation
+## 🧠 Concepts and Techniques Used
 
-Buffer-based rendering
+* BIOS interrupts for keyboard and display (`INT 10h`, `INT 16h`, etc.)
+* Direct manipulation of video memory at segment `0xB800`
+* Handling keyboard input with scan codes
+* Buffer-based rendering for smooth display updates
+* Simple game logic for snake movement, food generation, and collision detection
+* Basic timing using BIOS time interrupts
 
-Game loop, collision detection, and timing
+---
 
-📷 Screenshots
-Title Screen Example:
+## 🧩 Future Improvements
 
-vbnet
-Copy
-Edit
-         █████████████████████████████████████
-         █       WELCOME TO SNAKE GAME!     █
-         █    PRESS ANY KEY TO START...     █
-         █████████████████████████████████████
-Gameplay Example:
+* Add sound effects via PC speaker or BIOS calls
+* Implement difficulty levels with varying snake speed
+* Save high scores to a file or memory
+* Use colors to differentiate snake and food
+* Add pause/resume functionality
 
-markdown
-Copy
-Edit
-Score: 0005
-................................................
-.............********...........................
-................................................
-🧩 Future Improvements
-Add sound support using INT 10h or PC speaker
+---
 
-Add difficulty levels
+## 📜 License
 
-High score saving
+This project is released for educational purposes. Feel free to use, modify, and distribute the code with appropriate credit to the authors.
 
-Colorful snake body rendering using attribute bytes
+---
 
-📜 License
-This project is for educational purposes. Feel free to use and modify the code with attribution.
+Thank you for trying out the Snake Game!
+Feel free to contribute or report issues.
+
+```
