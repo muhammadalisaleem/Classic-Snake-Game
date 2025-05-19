@@ -30,7 +30,7 @@ Control the snake with arrow keys to eat food, grow longer, and avoid running in
 1. **Assemble the source code into a `.COM` executable:**
    ```bash
    nasm snakegame.asm -f bin -o snakegame.com
-````
+   ```
 
 2. **Run the game inside DOSBox or any DOS environment:**
 
